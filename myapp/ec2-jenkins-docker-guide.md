@@ -553,3 +553,51 @@ Best for	Learning, small projects	Production, large apps
 ## For saving docker hub credentials :
 
 # use jenkins manager > credentials > global > add user with password >  add username and pswd :
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/kashishver-ma/Cloud-learnings'
+            }
+        }
+        
+        stage('Show File') {
+            steps {
+                sh 'cat index.html'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t htmlapp:latest .'
+            }
+        }
+
+        stage('Push to Docker Hub') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    sh '''
+                        echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+                        docker tag htmlapp:latest $DOCKER_USER/htmlapp:latest
+                        docker push $DOCKER_USER/htmlapp:latest
+                    '''
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    sh '''
+                        docker rm -f htmlapp || true
+                        docker run -d -p 8080:80 --name htmlapp $DOCKER_USER/htmlapp:latest
+                    '''
+                }
+            }
+        }
+    }
+}
+ 
