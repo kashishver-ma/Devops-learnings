@@ -544,3 +544,12 @@ Failover	None	Pod rescheduling
 Networking	Port mapping on EC2	Kubernetes Services/Ingress
 Deploy method	docker run from Jenkins	kubectl apply from Jenkins
 Best for	Learning, small projects	Production, large apps
+
+
+
+.............................................................................................
+
+
+## For saving docker hub credentials :
+
+# use jenkins manager > credentials > global > add user with password >  add username and pswd :
