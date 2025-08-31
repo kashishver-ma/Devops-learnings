@@ -3,11 +3,11 @@ From ubuntu:latest as builder
 # backend
 RUN apt-get update 
 # COPY . /app
-WORKDIR /app
+WORKDIR /myapp2
 
 
-From python:3.8-slim
-COPY --from=builder . /app/backend
+FROM python:3.8-slim
+COPY --from=builder . /backend
 WORKDIR /app/backend
 COPY requirements.txt requirements.txt
 
@@ -19,7 +19,7 @@ CMD ["python", "app.py"]
 FROM nodejs:14 as nodebuilder
 COPY . /app/frontend
 WORKDIR /app/frontend
-COPY --from=builder /app/frontend/package*.json ./
+COPY --from=builder /frontend/package*.json ./
 RUN npm install
 RUN npm run build
 
