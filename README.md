@@ -1,6 +1,6 @@
 # PROJECT 1 : 
 
-## Jenkins based project : 
+## Jenkins based project :  (Simple HTML + CSS  file) 
 
 It contains all the information how jenkins life cycle work along with docker and docker hub.
 It has myapp file in which a basic HTML application is stored with some styling applied.
