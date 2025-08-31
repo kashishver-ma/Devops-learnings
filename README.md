@@ -25,6 +25,8 @@ It contains details about  :
 - How to write a integrated Docker compose file for backend and frontend ?
 - How to Automate Ci/Cd process using jenkins and use Docker hub as a docker container Regsitry for public access ?
 
+- [APP2](https://github.com/kashishver-ma/Cloud-learnings/tree/main/myapp2)
+
 # PROJECT 3 :
 
 ## Docker + DOckerHub + AWS VM : to-do list  (REACT-NEXTJS , fIRESTORE)
@@ -35,7 +37,7 @@ It contains how to :
 - How to deploy container on docker hub ? 
 - How to make a application deploment ready and access it using a VM ip .
 
-
+- [app3](https://github.com/kashishver-ma/Cloud-learnings/tree/main/myapp3)
 
 
 
