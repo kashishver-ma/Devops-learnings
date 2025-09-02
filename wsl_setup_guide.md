@@ -26,6 +26,8 @@
 ```powershell
 wsl --install
 ```
+```
+wsl --install -d Ubuntu```
 
 This automatically:
 - Enables WSL feature
