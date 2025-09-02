@@ -1,3 +1,7 @@
+# How to Use Windows As a virtual Machine ?? 
+
+[wsl](https://github.com/kashishver-ma/Devops-learnings/blob/main/wsl_setup_guide.md)
+
 # PROJECT 1 :
 
 ## Jenkins based project : (Simple HTML + CSS file)
@@ -40,6 +44,6 @@ It contains how to :
 
 - [app3](https://github.com/kashishver-ma/Cloud-learnings/tree/main/myapp3)
 
-## use Windows As a virtual Machine
+# PROJECT 4: 
+### Deploy a Simple Web Application on Kubernetes 
 
-[wsl]()
